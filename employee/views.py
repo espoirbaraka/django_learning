@@ -1,3 +1,4 @@
+from ast import Return
 from django.shortcuts import render
 from django.http import JsonResponse
 
@@ -11,3 +12,4 @@ from employee.serializers import *
 def posteList(request):
     poste = Poste.objects.all()
     poste_serializer = PosteSerializer(poste, many=True)
+    return Response(poste_serializer.data)

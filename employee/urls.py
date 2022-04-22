@@ -5,4 +5,6 @@ from employee import views
 
 urlpatterns =[
     path('poste-list', views.posteList),
+    path('poste-create', views.posteCreate),
+    path('detail-post/<str:pk>/', views.posteDetail),
 ]

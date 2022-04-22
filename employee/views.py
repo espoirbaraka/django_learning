@@ -7,3 +7,7 @@ from employee.models import *
 from employee.serializers import *
 
 # Create your views here.
+@api_view(['GET'])
+def posteList(request):
+    poste = Poste.objects.all()
+    poste_serializer = PosteSerializer(poste, many=True)
